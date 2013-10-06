@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.security.MessageDigest;
 
+import javax.xml.bind.DatatypeConverter;
+
 public class FileHashCheck {
 
 	private static final byte NEWLINE = (byte)'\n';
@@ -35,7 +37,7 @@ public class FileHashCheck {
 				md.update(nMinus1);
 				md.update(NEWLINE);
 
-				String hashed = new sun.misc.BASE64Encoder().encode(md.digest());
+				String hashed = DatatypeConverter.printBase64Binary(md.digest());
 
 				if (!hashed.equals(line.substring(1))) {
 					return false;
