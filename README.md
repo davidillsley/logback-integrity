@@ -18,7 +18,7 @@ Test3
 
 It can be applied with a simple configuration as shown:
 
-```
+```xml
 <configuration>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
